@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 # Welcome
 echo "This will setup Atuin for your machine locally"
 
 # Install Rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-source "$HOME/.cargo/env"
+curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/linux-terminal-setup/rust-setup/main/setup.sh | bash
 
 # Setup Atuin
 bash <(curl https://raw.githubusercontent.com/atuinsh/atuin/main/install.sh)

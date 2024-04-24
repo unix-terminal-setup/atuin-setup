@@ -10,5 +10,5 @@ Script to setup [Atuin](https://atuin.sh/) locally on your machine.
 ### Quick Start
 
 ```bash
-curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/linux-terminal-setup/atuin-setup/main/setup.sh | bash
+curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/unix-terminal-setup/atuin-setup/main/setup.sh | bash
 ```

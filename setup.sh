@@ -5,9 +5,7 @@ set -euo pipefail
 # Welcome
 echo "This will setup Atuin for your machine locally"
 
-# Install Rust
-curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/unix-terminal-setup/rust-setup/main/setup.sh | bash
-
+# OS Detection
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	echo "Linux detected."
         sudo apt install pkg-config libssl-dev build-essential -y
@@ -17,6 +15,9 @@ else
         echo "Unknown OS, abort."
 	exit 1
 fi
+
+# Install Rust
+curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/unix-terminal-setup/rust-setup/main/setup.sh | bash
 
 # Setup Atuin
 bash <(curl https://raw.githubusercontent.com/atuinsh/atuin/main/install.sh)

@@ -5,7 +5,7 @@ set -euo pipefail
 # Welcome
 echo "This will setup Atuin for your machine locally"
 
-# OS Detection
+# OS Dependencies
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	echo "Linux detected."
         sudo apt install pkg-config libssl-dev build-essential -y
@@ -31,5 +31,17 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	echo 'eval "$(atuin init bash)"' >> ~/.bash_profile
 fi
 
-# Restart Terminals
-echo "Please restart your terminals and execute: atuin import auto"
+# Reload Path
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+	echo "Linux detected."
+        source ~/.bashrc
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    	echo "Mac detected." 
+     	source ~/.bash_profile
+else
+        echo "Unknown OS, abort."
+	exit 1
+fi
+
+# Import History
+atuin import auto

@@ -8,7 +8,7 @@ echo "This will setup Atuin for your machine locally"
 # OS Dependencies
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	echo "Linux detected."
-        sudo apt install pkg-config libssl-dev build-essential -y
+        sudo apt install pkg-config libssl-dev build-essential protobuf-compiler -y
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     	echo "Mac detected."    
 else

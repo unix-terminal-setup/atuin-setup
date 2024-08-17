@@ -21,7 +21,6 @@ curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/unix-term
 
 # Setup Atuin
 bash <(curl https://raw.githubusercontent.com/atuinsh/atuin/main/install.sh)
-atuin import auto
 
 # Install Atuin
 cargo install atuin
@@ -33,4 +32,4 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 # Restart Terminals
-echo "Please restart your terminals"
+echo "Please restart your terminals and execute: atuin import auto"
